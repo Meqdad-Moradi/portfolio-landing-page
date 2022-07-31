@@ -1,0 +1,56 @@
+.header {
+   position: sticky;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 10000;
+   min-height: 70px;
+   box-shadow: 0 10px 15px -13px hsla(0, 0%, 0%, 0.3);
+
+   .container {
+      @include flex();
+      min-height: inherit;
+   }
+
+   .logo {
+      a {
+         font-size: 1.6rem;
+         font-weight: 500;
+         text-transform: uppercase;
+         color: $primary;
+      }
+   }
+
+   .nav {
+      position: relative;
+   }
+
+   .nav-list {
+      @include flex();
+
+      a {
+         font-size: 1.125rem;
+         transition: all 0.3s ease-in-out;
+
+         &.active,
+         &:hover,
+         &:focus-visible {
+            color: $primary;
+         }
+      }
+   }
+
+   .download-btn {
+      padding: 0.5em 1.5em;
+      border: 2px solid $primary;
+      border-radius: 100vmax;
+      font-size: 1.125rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+         background-color: $primary;
+         color: $dark;
+      }
+   }
+}

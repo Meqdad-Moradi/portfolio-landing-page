@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+:root {
+  --gap: 3em;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+::first-letter {
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(240deg, 6%, 18%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+a {
+  color: hsl(0deg, 0%, 100%);
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button,
+input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/*  layouts  */
+.container {
+  width: min(100% - 2rem, 1110px);
+  margin-inline: auto;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  min-height: 70px;
+  box-shadow: 0 10px 15px -13px hsla(0deg, 0%, 0%, 0.3);
+}
+.header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  min-height: inherit;
+}
+.header .logo a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: hsl(162deg, 90%, 49%);
+}
+.header .nav {
+  position: relative;
+}
+.header .nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+.header .nav-list a {
+  font-size: 1.125rem;
+  transition: all 0.3s ease-in-out;
+}
+.header .nav-list a.active, .header .nav-list a:hover, .header .nav-list a:focus-visible {
+  color: hsl(162deg, 90%, 49%);
+}
+.header .download-btn {
+  padding: 0.5em 1.5em;
+  border: 2px solid hsl(162deg, 90%, 49%);
+  border-radius: 100vmax;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.header .download-btn:hover {
+  background-color: hsl(162deg, 90%, 49%);
+  color: hsl(240deg, 6%, 18%);
+}/*# sourceMappingURL=style.css.map */
