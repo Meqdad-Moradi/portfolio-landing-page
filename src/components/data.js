@@ -13,30 +13,35 @@ export const data = [
       url: landingPage,
       title: "landing page",
       disc: "Responsive website",
+      targetLink: "https://m-moradi.netlify.app/",
    },
    {
       id: 2,
       url: slider,
       title: "Responsive Slider",
       disc: "Responsive slider",
+      targetLink: "https://meqdad-moradi.github.io/slider/",
    },
    {
       id: 3,
       url: sunniside,
       title: "Sunnyside",
       disc: "frontend mentor's project",
+      targetLink: "https://meqdad-moradi.github.io/sunnyside/",
    },
    {
       id: 4,
       url: todolist,
       title: "Todo List",
       disc: "Responsive todo list",
+      targetLink: "https://meqdad-moradi.github.io/todo-list/",
    },
    {
       id: 5,
       url: uni,
       title: "Universitat Website",
       disc: "Responsive webiste",
+      targetLink: "https://meqdad-moradi.github.io/uni/",
    },
 ];
 

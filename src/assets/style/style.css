@@ -316,6 +316,7 @@ img {
 @media (max-width: 50rem) {
   .showcase .slider-btn {
     top: 80%;
+    display: none;
   }
   .showcase .slider-btn.next {
     right: 5%;

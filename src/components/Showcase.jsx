@@ -4,6 +4,10 @@ import ShowcaseContent from "./ShowcaseContent";
 const Showcase = () => {
    const [active, setActive] = useState("slideOne");
 
+   const touchEvent = () => {
+      console.log("it is working walll1a!");
+   };
+
    const slider = () => {
       if (active === "slideOne") {
          setActive("slideTwo");
@@ -23,7 +27,7 @@ const Showcase = () => {
    }, [active]);
 
    return (
-      <div className="showcase">
+      <div className="showcase" onTouchMove={slider}>
          <button className="slider-btn next" onClick={slider}>
             <span>&#10097;</span>
          </button>

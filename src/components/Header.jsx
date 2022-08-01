@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { AiOutlineDownload } from "react-icons/ai";
+import cv from "../assets/docs/Lebenslauf_Moradi_Meqdad.pdf";
+
 const Header = () => {
    const [activeNav, setactiveNav] = useState(false);
 
+   // toggle the navigation
    const toggleNav = () => {
       setactiveNav(!activeNav);
    };
@@ -32,7 +35,7 @@ const Header = () => {
                      {/* download cv */}
                      <a
                         className="download-btn"
-                        href="./assets/images/pic.jpg"
+                        href={cv}
                         download="Meqdad's CV"
                      >
                         Download CV <AiOutlineDownload size={25} />
