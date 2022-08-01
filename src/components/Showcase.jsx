@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ShowcaseContent from "./ShowcaseContent";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Showcase = () => {
    const [active, setActive] = useState("slideOne");

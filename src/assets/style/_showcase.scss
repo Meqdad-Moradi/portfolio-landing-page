@@ -47,7 +47,8 @@
       transition: all 0.5s ease-in-out;
 
       .showcase-title {
-         font-size: clamp(2rem, 3vw, 4rem);
+         font-family: "Montserrat", sans-serif;
+         font-size: clamp(2.25rem, 3.25vw, 4rem);
          font-weight: 600;
       }
 
@@ -92,6 +93,22 @@
 
       &.prev {
          left: 10%;
+      }
+   }
+}
+
+@media (max-width: 50rem) {
+   .showcase {
+      .slider-btn {
+         top: 80%;
+
+         &.next {
+            right: 5%;
+         }
+
+         &.prev {
+            left: 5%;
+         }
       }
    }
 }

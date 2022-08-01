@@ -1,0 +1,4 @@
+.main {
+   --gap: 4em;
+   padding-block: var(--gap);
+}

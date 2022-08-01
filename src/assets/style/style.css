@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 :root {
   --gap: 3em;
+  --border-radius: 1em;
 }
 
 *,
@@ -13,7 +15,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 70px;
+  scroll-padding-top: 120px;
 }
 
 ::first-letter {
@@ -23,13 +25,24 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background-color: hsl(240deg, 6%, 18%);
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 90%);
   font-size: 1rem;
   font-weight: 400;
 }
 
-a {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: 1px;
   color: hsl(0deg, 0%, 100%);
+}
+
+a {
+  color: hsl(0deg, 0%, 90%);
   text-decoration: none;
 }
 
@@ -54,6 +67,12 @@ ol {
   list-style: none;
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
 /*  utilities  */
 .container {
   width: min(100% - 2rem, 1110px);
@@ -61,6 +80,7 @@ ol {
 }
 
 .btn {
+  --gap: 2em;
   display: inline-block;
   background-color: hsl(162deg, 90%, 49%);
   color: hsl(240deg, 6%, 18%);
@@ -71,10 +91,38 @@ ol {
   margin-top: var(--gap);
   border: 2px solid transparent;
 }
+.btn .arrow-right {
+  transition: padding 0.25s ease-in-out;
+}
 .btn:hover, .btn:focus-visible {
   border: 2px solid hsl(162deg, 90%, 49%);
   background-color: transparent;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 90%);
+}
+.btn:hover .arrow-right, .btn:focus-visible .arrow-right {
+  padding-left: 0.2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  box-shadow: 0 0 1em -0.25em hsl(240deg, 5%, 11%);
+  text-align: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.card .card-content {
+  padding-bottom: var(--gap);
+}
+
+.title {
+  font-size: clamp(1.6rem, 2.5vw, 3rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0px;
 }
 
 /*  layouts  */
@@ -120,7 +168,7 @@ ol {
 .header .nav-list a.active, .header .nav-list a:hover, .header .nav-list a:focus-visible {
   color: hsl(162deg, 90%, 49%);
 }
-.header .download-btn {
+.header .nav-list .download-btn {
   --gap: 0.5rem;
   padding: 0.5em 1.5em;
   border: 2px solid hsl(162deg, 90%, 49%);
@@ -131,11 +179,59 @@ ol {
   gap: var(--gap);
   transition: all 0.3s ease-in-out;
 }
-.header .download-btn:hover {
+.header .nav-list .download-btn:hover {
   background-color: hsl(162deg, 90%, 49%);
   color: hsl(240deg, 6%, 18%);
 }
+.header .toggle-btn {
+  display: none;
+  padding: 0.5em;
+}
+.header .toggle-btn span {
+  background-color: hsl(0deg, 0%, 90%);
+  height: 3px;
+  width: 25px;
+  display: inline-block;
+  transform-origin: 24px;
+  transition: all 0.4s ease-in-out;
+}
 
+@media (max-width: 50rem) {
+  .header .nav {
+    position: fixed;
+    width: min(20em, 90%);
+    min-height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: hsl(240deg, 6%, 18%);
+    display: grid;
+    place-items: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+  }
+  .header .nav.active {
+    transform: translateX(0);
+  }
+  .header .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+  .header .toggle-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 99999;
+  }
+  .header .toggle-btn.active span:nth-of-type(1) {
+    transform: rotate(-45deg);
+  }
+  .header .toggle-btn.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  .header .toggle-btn.active span:nth-of-type(3) {
+    transform: rotate(45deg);
+  }
+}
 .showcase {
   min-height: calc(100vh - 70px);
   overflow: hidden;
@@ -178,7 +274,8 @@ ol {
   transition: all 0.5s ease-in-out;
 }
 .showcase .content .showcase-title {
-  font-size: clamp(2rem, 3vw, 4rem);
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2.25rem, 3.25vw, 4rem);
   font-weight: 600;
 }
 .showcase .content .showcase-sub-title {
@@ -193,7 +290,7 @@ ol {
   font-size: 2rem;
   width: 2.5rem;
   height: 2.5rem;
-  color: hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 90%);
   cursor: pointer;
   border-radius: 100vmax;
   border: 2px solid hsl(162deg, 90%, 49%);
@@ -214,4 +311,30 @@ ol {
 }
 .showcase .slider-btn.prev {
   left: 10%;
+}
+
+@media (max-width: 50rem) {
+  .showcase .slider-btn {
+    top: 80%;
+  }
+  .showcase .slider-btn.next {
+    right: 5%;
+  }
+  .showcase .slider-btn.prev {
+    left: 5%;
+  }
+}
+.works .works-card {
+  margin-top: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+@media (max-width: 50rem) {
+  body {
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
 
 // import snippets
 @import "colors";
@@ -6,6 +7,7 @@
 
 :root {
    --gap: 3em;
+   --border-radius: 1em;
 }
 
 *,
@@ -18,7 +20,7 @@
 
 html {
    scroll-behavior: smooth;
-   scroll-padding-top: 70px;
+   scroll-padding-top: 120px;
 }
 
 ::first-letter {
@@ -31,6 +33,17 @@ body {
    color: $white;
    font-size: 1rem;
    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: 600;
+   letter-spacing: 1px;
+   color: hsl(0, 0%, 100%);
 }
 
 a {
@@ -59,6 +72,12 @@ ol {
    list-style: none;
 }
 
+img {
+   width: 100%;
+   max-width: 100%;
+   display: block;
+}
+
 /*  utilities  */
 .container {
    width: min(100% - 2rem, 1110px);
@@ -66,6 +85,7 @@ ol {
 }
 
 .btn {
+   --gap: 2em;
    display: inline-block;
    background-color: $primary;
    color: $dark;
@@ -76,14 +96,50 @@ ol {
    margin-top: var(--gap);
    border: 2px solid transparent;
 
+   .arrow-right {
+      transition: padding 0.25s ease-in-out;
+   }
+
    &:hover,
    &:focus-visible {
       border: 2px solid $primary;
       background-color: transparent;
       color: $white;
+
+      .arrow-right {
+         padding-left: 0.2em;
+      }
    }
 }
+
+.card {
+   @include flex(column);
+   box-shadow: 0 0 1em -0.25em $darker;
+   text-align: center;
+   border-radius: var(--border-radius);
+   overflow: hidden;
+
+   .card-content {
+      padding-bottom: var(--gap);
+   }
+}
+
+.title {
+   font-size: clamp(1.6rem, 2.5vw, 3rem);
+   font-family: "Montserrat", sans-serif;
+   font-weight: 600;
+   letter-spacing: 0px;
+}
+
 /*  layouts  */
 
 @import "header";
 @import "showcase";
+@import "works";
+
+// set all text alignment to the center on mobile or tablet devices
+@media (max-width: 50rem) {
+   body {
+      text-align: center;
+   }
+}
