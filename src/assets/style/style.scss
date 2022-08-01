@@ -38,6 +38,10 @@ a {
    text-decoration: none;
 }
 
+p {
+   margin-top: 1em;
+}
+
 button {
    background-color: transparent;
    border: none;
@@ -55,9 +59,31 @@ ol {
    list-style: none;
 }
 
-/*  layouts  */
+/*  utilities  */
 .container {
    width: min(100% - 2rem, 1110px);
    margin-inline: auto;
 }
+
+.btn {
+   display: inline-block;
+   background-color: $primary;
+   color: $dark;
+   font-size: 1.125rem;
+   padding: 0.5em 1.5em;
+   border-radius: 100vmax;
+   transition: all 0.3s ease-in-out;
+   margin-top: var(--gap);
+   border: 2px solid transparent;
+
+   &:hover,
+   &:focus-visible {
+      border: 2px solid $primary;
+      background-color: transparent;
+      color: $white;
+   }
+}
+/*  layouts  */
+
 @import "header";
+@import "showcase";

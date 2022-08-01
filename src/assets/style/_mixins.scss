@@ -1,6 +1,6 @@
-@mixin alignment($jc: space-between, $ai: center) {
-   justify-content: $jc;
-   align-items: $ai;
+@mixin alignment() {
+   justify-content: space-between;
+   align-items: center;
    gap: var(--gap);
 }
 

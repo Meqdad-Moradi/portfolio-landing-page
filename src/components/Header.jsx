@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-
+import { AiOutlineDownload } from "react-icons/ai";
 const Header = () => {
    return (
       <header className="header">
@@ -33,7 +32,7 @@ const Header = () => {
                   href="./assets/images/pic.jpg"
                   download="Meqdad's CV"
                >
-                  download CV
+                  Download CV <AiOutlineDownload size={25} />
                </a>
             </div>
          </div>

@@ -6,6 +6,7 @@
    z-index: 10000;
    min-height: 70px;
    box-shadow: 0 10px 15px -13px hsla(0, 0%, 0%, 0.3);
+   background-color: $dark;
 
    .container {
       @include flex();
@@ -41,11 +42,15 @@
    }
 
    .download-btn {
+      --gap: 0.5rem;
+
       padding: 0.5em 1.5em;
       border: 2px solid $primary;
       border-radius: 100vmax;
       font-size: 1.125rem;
-      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
       transition: all 0.3s ease-in-out;
 
       &:hover {
