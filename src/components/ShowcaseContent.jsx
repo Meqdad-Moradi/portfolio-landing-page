@@ -7,7 +7,7 @@ const ShowcaseContent = ({ active, title, subTitle }) => {
             <h1 className="showcase-title">{title}</h1>
             <p className="showcase-sub-title">{subTitle}</p>
             <a href="#works" className="btn">
-               show more <span className="arrow-right">&#10095;</span>
+               show more <span className="arrow-right">&#10230;</span>
             </a>
          </div>
       </div>

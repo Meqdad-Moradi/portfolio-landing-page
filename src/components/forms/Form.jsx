@@ -48,7 +48,7 @@ const Form = () => {
             </div>
 
             <button className="btn">
-               Send <span className="arrow-right">&#10095;</span>
+               Send <span className="arrow-right">&#129125;</span>
             </button>
          </form>
       </>

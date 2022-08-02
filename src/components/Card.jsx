@@ -10,7 +10,7 @@ const Card = ({ imageSource, title, disc, btnLink, target }) => {
             <h2>{title}</h2>
             <p>{disc}</p>
             <a href={btnLink} className="btn" target={target}>
-               Show Project <span className="arrow-right">&#10095;</span>
+               Show Project <span className="arrow-right">&#10230;</span>
             </a>
          </div>
       </article>

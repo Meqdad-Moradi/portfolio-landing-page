@@ -1,4 +1,6 @@
 .works {
+   padding-bottom: var(--gap);
+
    .works-card {
       margin-top: var(--gap);
       @include grid(17rem);

@@ -12,7 +12,9 @@ const Works = () => {
    return (
       <section className="works" id="works" aria-label="our-projects">
          <div className="container">
-            <h1 className="title">some of the projects wich is done so far</h1>
+            <h1 className="title">
+               We like our projects and also our customers ;-)
+            </h1>
             <p>
                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde,
                sint est. Culpa necessitatibus omnis sequi.

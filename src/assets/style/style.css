@@ -73,10 +73,10 @@ img {
   width: 100%;
   max-width: 100%;
   display: block;
-}
-
-section {
-  padding-block: var(--gap);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /*  utilities  */
@@ -144,25 +144,31 @@ section {
   background-color: hsl(162deg, 90%, 49%);
   color: hsl(240deg, 6%, 18%);
   font-size: 1.125rem;
-  line-height: 1.2;
   text-transform: capitalize;
   padding: 0.5em 1.5em;
   border-radius: 100vmax;
   transition: all 0.3s ease-in-out;
   margin-top: var(--gap);
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   border: 2px solid transparent;
 }
 .btn .arrow-right {
+  display: inline-block;
+  font-weight: 300;
+  padding-left: 0.3em;
   transition: padding 0.25s ease-in-out;
 }
-.btn:hover, .btn:focus-visible {
+.btn:active, .btn:hover, .btn:focus-visible {
   border: 2px solid hsl(162deg, 90%, 49%);
   background-color: transparent;
   color: hsl(0deg, 0%, 90%);
 }
-.btn:hover .arrow-right, .btn:focus-visible .arrow-right {
-  padding-left: 0.2em;
+.btn:active .arrow-right, .btn:hover .arrow-right, .btn:focus-visible .arrow-right {
+  padding-left: 0.4em;
 }
 
 .download-btn {
@@ -309,8 +315,11 @@ section {
 }
 .showcase .slide {
   min-height: calc(100vh - 70px);
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -322,7 +331,7 @@ section {
   width: 100%;
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .showcase .slide.active {
@@ -341,10 +350,15 @@ section {
   position: relative;
   z-index: 2;
   transition: all 0.5s ease-in-out;
+  padding: 0 10em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .showcase .content .showcase-title {
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(2.25rem, 3.25vw, 4rem);
+  font-size: clamp(2.25rem, 4vw, 4.5rem);
   font-weight: 600;
   line-height: normal;
 }
@@ -357,16 +371,15 @@ section {
   z-index: 15;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2rem;
+  font-size: 2.5rem;
   width: 2.5rem;
   height: 2.5rem;
   color: hsl(0deg, 0%, 90%);
   cursor: pointer;
   border-radius: 100vmax;
-  border: 2px solid hsl(162deg, 90%, 49%);
   display: grid;
   place-content: center;
-  padding: 0.6em;
+  padding: 1em;
   opacity: 0.5;
   transition: opacity 0.3s ease-in-out;
 }
@@ -377,13 +390,16 @@ section {
   display: inline-block;
 }
 .showcase .slider-btn.next {
-  right: 10%;
+  right: 2%;
 }
 .showcase .slider-btn.prev {
-  left: 10%;
+  left: 2%;
 }
 
 @media (max-width: 50rem) {
+  .showcase .content {
+    padding: 0;
+  }
   .showcase .slider-btn {
     top: 80%;
     display: none;
@@ -395,6 +411,9 @@ section {
     left: 5%;
   }
 }
+.works {
+  padding-bottom: var(--gap);
+}
 .works .works-card {
   margin-top: var(--gap);
   display: grid;
@@ -405,6 +424,7 @@ section {
 }
 
 .contact {
+  padding-block: var(--gap);
   background-color: hsl(240deg, 7%, 23%);
 }
 

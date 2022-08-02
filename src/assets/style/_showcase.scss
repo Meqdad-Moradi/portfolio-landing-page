@@ -6,8 +6,11 @@
 
    .slide {
       min-height: calc(100vh - 70px);
-      display: grid;
-      place-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: center;
       position: absolute;
       inset: 0;
       opacity: 0;
@@ -19,7 +22,7 @@
          width: 100%;
          position: absolute;
          inset: 0;
-         background-color: rgb(0 0 0 / 0.5);
+         background-color: rgb(0 0 0 / 0.6);
          z-index: 1;
       }
 
@@ -45,10 +48,12 @@
       position: relative;
       z-index: 2;
       transition: all 0.5s ease-in-out;
+      padding: 0 10em;
+      user-select: none;
 
       .showcase-title {
          font-family: "Montserrat", sans-serif;
-         font-size: clamp(2.25rem, 3.25vw, 4rem);
+         font-size: clamp(2.25rem, 4vw, 4.5rem);
          font-weight: 600;
          line-height: normal;
       }
@@ -65,17 +70,16 @@
       top: 50%;
       transform: translateY(-50%);
 
-      font-size: 2rem;
+      font-size: 2.5rem;
       width: 2.5rem;
       height: 2.5rem;
       color: $white;
       cursor: pointer;
       border-radius: 100vmax;
-      border: 2px solid $primary;
 
       display: grid;
       place-content: center;
-      padding: 0.6em;
+      padding: 1em;
       opacity: 0.5;
       transition: opacity 0.3s ease-in-out;
 
@@ -89,17 +93,21 @@
       }
 
       &.next {
-         right: 10%;
+         right: 2%;
       }
 
       &.prev {
-         left: 10%;
+         left: 2%;
       }
    }
 }
 
 @media (max-width: 50rem) {
    .showcase {
+      .content {
+         padding: 0;
+      }
+
       .slider-btn {
          top: 80%;
          display: none;

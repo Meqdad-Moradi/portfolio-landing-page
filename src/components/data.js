@@ -6,6 +6,7 @@ import slider from "../assets/images/slider.jpg";
 import sunniside from "../assets/images/sunniside.jpg";
 import todolist from "../assets/images/todolist.jpg";
 import uni from "../assets/images/uni.jpg";
+import shopping from "../assets/images/shopping-website.jpg";
 
 export const data = [
    {
@@ -42,6 +43,13 @@ export const data = [
       title: "Universitat Website",
       disc: "Responsive webiste",
       targetLink: "https://meqdad-moradi.github.io/uni/",
+   },
+   {
+      id: 6,
+      url: shopping,
+      title: "Shoping Website",
+      disc: "Responsive webiste",
+      targetLink: "https://meqdad-moradi.github.io/w-chalange/",
    },
 ];
 
