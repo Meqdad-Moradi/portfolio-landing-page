@@ -28,6 +28,7 @@ body {
   color: hsl(0deg, 0%, 90%);
   font-size: 1rem;
   font-weight: 400;
+  line-height: 1.7;
 }
 
 h1,
@@ -345,6 +346,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-size: clamp(2.25rem, 3.25vw, 4rem);
   font-weight: 600;
+  line-height: normal;
 }
 .showcase .content .showcase-sub-title {
   margin-top: 1.5em;
@@ -409,5 +411,8 @@ section {
 @media (max-width: 50rem) {
   body {
     text-align: center;
+  }
+  .btn {
+    line-height: 1.7;
   }
 }/*# sourceMappingURL=style.css.map */

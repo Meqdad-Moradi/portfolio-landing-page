@@ -33,6 +33,7 @@ body {
    color: $white;
    font-size: 1rem;
    font-weight: 400;
+   line-height: 1.7;
 }
 
 h1,
@@ -183,5 +184,9 @@ section {
 @media (max-width: 50rem) {
    body {
       text-align: center;
+   }
+
+   .btn{
+      line-height: 1.7;
    }
 }
