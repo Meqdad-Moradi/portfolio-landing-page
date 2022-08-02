@@ -1,0 +1,62 @@
+.form {
+   .form-control {
+      position: relative;
+      margin-bottom: 2em;
+
+      &:last-of-type {
+         margin-bottom: 0;
+      }
+   }
+
+   textarea,
+   input {
+      width: 100%;
+      padding: 0.5em 0.3em;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+      color: $white;
+      border-radius: 0;
+      transition: all 0.3s ease-out;
+      border-bottom: 2px solid rgb(152, 152, 152);
+   }
+
+   textarea:focus,
+   input:valid,
+   input:focus-visible {
+      border-bottom-color: $primary;
+   }
+
+   label {
+      display: inline-block;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      color: $white;
+      opacity: 0.5;
+      transform: translateY(-50%);
+      transition: all 0.3s ease-out;
+   }
+
+   textarea:valid + label,
+   textarea:focus-visible + label,
+   input:valid + label,
+   input:focus-visible + label {
+      transform: translateY(0);
+      top: -50%;
+   }
+
+   textarea {
+      display: inline-block;
+      width: 100%;
+      resize: none;
+   }
+
+   small {
+      color: $red;
+   }
+
+   button:active {
+      transform: scale(0.99);
+   }
+}

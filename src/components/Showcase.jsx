@@ -4,10 +4,6 @@ import ShowcaseContent from "./ShowcaseContent";
 const Showcase = () => {
    const [active, setActive] = useState("slideOne");
 
-   const touchEvent = () => {
-      console.log("it is working walll1a!");
-   };
-
    const slider = () => {
       if (active === "slideOne") {
          setActive("slideTwo");

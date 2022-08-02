@@ -39,24 +39,6 @@
             color: $primary;
          }
       }
-
-      .download-btn {
-         --gap: 0.5rem;
-
-         padding: 0.5em 1.5em;
-         border: 2px solid $primary;
-         border-radius: 100vmax;
-         font-size: 1.125rem;
-         display: flex;
-         align-items: center;
-         gap: var(--gap);
-         transition: all 0.3s ease-in-out;
-
-         &:hover {
-            background-color: $primary;
-            color: $dark;
-         }
-      }
    }
 
    .toggle-btn {
