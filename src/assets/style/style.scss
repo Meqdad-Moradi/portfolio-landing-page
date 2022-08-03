@@ -191,7 +191,7 @@ img {
 @import "contact";
 
 // set all text alignment to the center on mobile or tablet devices
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
    body {
       text-align: center;
    }

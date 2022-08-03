@@ -113,7 +113,16 @@ const About = () => {
                </div>
 
                <div className="about-img-box" aria-label="about-image">
-                  <img src={aboutImages?.[2].url} alt="about us" />
+                  <img
+                     src={
+                        currentIndex === 0
+                           ? aboutImages?.[2].url
+                           : currentIndex === 1
+                           ? aboutImages?.[1].url
+                           : aboutImages?.[0].url
+                     }
+                     alt="about us"
+                  />
                </div>
             </div>
          </div>

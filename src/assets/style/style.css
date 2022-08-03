@@ -277,7 +277,7 @@ img {
   transition: all 0.4s ease-in-out;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
   .header .nav {
     position: fixed;
     width: min(20em, 90%);
@@ -402,7 +402,7 @@ img {
   left: 2%;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
   .showcase .content {
     padding: 0;
   }
@@ -448,6 +448,7 @@ img {
 }
 .about .btn-box .filter-btn {
   background-color: hsl(0deg, 0%, 90%);
+  color: hsl(240deg, 6%, 18%);
   padding: 0.5em 1.5em;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -497,6 +498,19 @@ img {
   top: 5px;
 }
 
+@media (max-width: 50em) {
+  .about .content {
+    align-items: center !important;
+  }
+  .about .social {
+    justify-content: center;
+  }
+  .about .about-img-box img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 .contact {
   padding-block: var(--gap);
 }
@@ -523,7 +537,7 @@ img {
   align-items: center;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 50em) {
   body {
     text-align: center;
   }

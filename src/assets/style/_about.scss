@@ -16,6 +16,7 @@
    .btn-box {
       .filter-btn {
          background-color: $white;
+         color: $dark;
          padding: 0.5em 1.5em;
          cursor: pointer;
          transition: all 0.3s ease-in-out;
@@ -60,19 +61,38 @@
       }
    }
 
-   .about-img-box{
-    img{
-        position: relative;
+   .about-img-box {
+      img {
+         position: relative;
 
-        &::before{
-            content: '';
+         &::before {
+            content: "";
             height: 100%;
             width: 5px;
             background-color: $darker;
             position: absolute;
             left: 100%;
             top: 5px;
-        }
-    }
+         }
+      }
+   }
+}
+
+@media (max-width: 50em) {
+   .about {
+      .content {
+         align-items: center !important;
+      }
+
+      .social {
+         justify-content: center;
+      }
+
+      .about-img-box {
+         img {
+            height: 100%;
+            object-fit: cover;
+         }
+      }
    }
 }
