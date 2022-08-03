@@ -164,7 +164,7 @@ img {
       }
    }
 
-   .card-content {
+   .content {
       padding-bottom: var(--gap);
    }
 }
@@ -172,7 +172,7 @@ img {
 .content {
    @include flex(column);
    justify-content: center;
-   gap: 0 !important;
+   gap: 0;
 }
 
 .title {
@@ -187,6 +187,7 @@ img {
 @import "header";
 @import "showcase";
 @import "works";
+@import "about";
 @import "contact";
 
 // set all text alignment to the center on mobile or tablet devices

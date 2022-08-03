@@ -200,7 +200,7 @@ img {
 .card:hover .img-box img {
   transform: scale(1.1);
 }
-.card .card-content {
+.card .content {
   padding-bottom: var(--gap);
 }
 
@@ -211,7 +211,7 @@ img {
   align-items: center;
   gap: var(--gap);
   justify-content: center;
-  gap: 0 !important;
+  gap: 0;
 }
 
 .title {
@@ -429,9 +429,76 @@ img {
   gap: var(--gap);
 }
 
-.contact {
+.about {
   padding-block: var(--gap);
   background-color: hsl(240deg, 7%, 23%);
+}
+.about .about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  margin-top: var(--gap);
+  align-items: start;
+}
+.about .content {
+  align-items: start;
+  gap: 2em;
+}
+.about .btn-box .filter-btn {
+  background-color: hsl(0deg, 0%, 90%);
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.about .btn-box .filter-btn:where(:hover, :focus) {
+  background-color: hsl(162deg, 90%, 49%);
+}
+.about .btn-box .filter-btn:first-of-type {
+  border-radius: 5px 0 0 5px;
+}
+.about .btn-box .filter-btn:last-of-type {
+  border-radius: 0 5px 5px 0;
+}
+.about .btn-box .filter-btn:not(last-child) {
+  border-right: 1px solid hsl(240deg, 5%, 11%);
+}
+.about .btn.active {
+  background-color: hsl(162deg, 90%, 49%);
+}
+.about .social {
+  margin-top: 2em;
+  display: flex;
+  gap: 1.5em;
+}
+.about .social a {
+  font-size: 1.5rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.about .social a:hover {
+  color: hsl(162deg, 90%, 49%);
+}
+.about .about-img-box img {
+  position: relative;
+}
+.about .about-img-box img::before {
+  content: "";
+  height: 100%;
+  width: 5px;
+  background-color: hsl(240deg, 5%, 11%);
+  position: absolute;
+  left: 100%;
+  top: 5px;
+}
+
+.contact {
+  padding-block: var(--gap);
 }
 .contact .container {
   display: grid;

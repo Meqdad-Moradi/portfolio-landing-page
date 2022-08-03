@@ -1,0 +1,78 @@
+.about {
+   padding-block: var(--gap);
+   background-color: $lighter;
+
+   .about-content {
+      @include grid();
+      margin-top: var(--gap);
+      align-items: start;
+   }
+
+   .content {
+      align-items: start;
+      gap: 2em;
+   }
+
+   .btn-box {
+      .filter-btn {
+         background-color: $white;
+         padding: 0.5em 1.5em;
+         cursor: pointer;
+         transition: all 0.3s ease-in-out;
+
+         &:where(:hover, :focus) {
+            background-color: $primary;
+         }
+
+         &:first-of-type {
+            border-radius: 5px 0 0 5px;
+         }
+
+         &:last-of-type {
+            border-radius: 0 5px 5px 0;
+         }
+
+         &:not(last-child) {
+            border-right: 1px solid $darker;
+         }
+      }
+   }
+
+   .btn.active {
+      background-color: $primary;
+   }
+
+   .social {
+      margin-top: 2em;
+      display: flex;
+      gap: 1.5em;
+
+      a {
+         font-size: 1.5rem;
+         height: max-content;
+         display: flex;
+         align-items: center;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            color: $primary;
+         }
+      }
+   }
+
+   .about-img-box{
+    img{
+        position: relative;
+
+        &::before{
+            content: '';
+            height: 100%;
+            width: 5px;
+            background-color: $darker;
+            position: absolute;
+            left: 100%;
+            top: 5px;
+        }
+    }
+   }
+}
