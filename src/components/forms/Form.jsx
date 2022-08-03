@@ -1,11 +1,12 @@
 import React, { useId, useState } from "react";
-import Input from "./Input";
 import { BsArrowRight } from "react-icons/bs";
+import Input from "./Input";
 
 const Form = () => {
    const inputId1 = useId();
    const inputId2 = useId();
    const [name, setName] = useState(null);
+   const [email, setEmail] = useState(null);
    const [err, setErr] = useState(null);
 
    // set
@@ -13,7 +14,9 @@ const Form = () => {
       e.preventDefault();
 
       if (name === null || name === "") {
-         setErr("Please insert your name!");
+         setErr("This field required!");
+      } else if (email === null || email === "") {
+         setErr("This field required!");
       }
    };
 
@@ -22,17 +25,19 @@ const Form = () => {
          <form className="form" onSubmit={(e) => submitForm(e)}>
             <Input
                id={inputId1}
-               inputName="Your Name..."
+               inputName="name"
                inputType="text"
                inputeText={(e) => setName(e.target.value)}
+               labelText="Your Name..."
                err={err}
             />
 
             <Input
                id={inputId2}
-               inputName="Your Name..."
-               inputType="text"
-               inputeText={(e) => setName(e.target.value)}
+               inputName="email"
+               inputType="email"
+               inputeText={(e) => setEmail(e.target.value)}
+               labelText="Your Email..."
                err={err}
             />
 

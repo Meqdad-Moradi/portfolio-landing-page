@@ -33,19 +33,19 @@ const Showcase = () => {
 
          <div className="slide-container">
             <ShowcaseContent
-               active={active === "slideOne" ? "active" : null}
+               active={active === "slideOne" && "active"}
                title="our hobby is to make convenient web apps"
                subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
                perspiciatis sequi optio corrupti asperiores numquam!"
             />
             <ShowcaseContent
-               active={active === "slideTwo" ? "active" : null}
+               active={active === "slideTwo" && "active"}
                title="Beautifully crafted web experience"
                subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
                perspiciatis sequi optio corrupti asperiores numquam!"
             />
             <ShowcaseContent
-               active={active === "slideThree" ? "active" : null}
+               active={active === "slideThree" && "active"}
                title="We are creatives"
                subTitle="Online Marketing, Website/Webshop, Grafikdesign, Domain & Hosting"
             />

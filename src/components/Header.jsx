@@ -36,7 +36,7 @@ const Header = () => {
                                  setMyIndex(i);
                                  toggleNav();
                               }}
-                              className={i === myIndex && "active"}
+                              className={i === myIndex ? "active" : undefined}
                               href={target}
                            >
                               {item}
