@@ -37,8 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 500;
   color: hsl(0deg, 0%, 100%);
 }
 
@@ -99,9 +98,8 @@ img {
   transition: all 0.3s ease-out;
   border-bottom: 2px solid rgb(152, 152, 152);
 }
-.form textarea:focus,
-.form input:valid,
-.form input:focus-visible {
+.form textarea:where(:focus, :valide),
+.form input:where(:focus, :valide) {
   border-bottom-color: hsl(162deg, 90%, 49%);
 }
 .form label {
@@ -114,10 +112,7 @@ img {
   transform: translateY(-50%);
   transition: all 0.3s ease-out;
 }
-.form textarea:valid + label,
-.form textarea:focus-visible + label,
-.form input:valid + label,
-.form input:focus-visible + label {
+.form :where(textarea:valid, textarea:focus, input:valid, input:focus) + label {
   transform: translateY(0);
   top: -50%;
 }
@@ -140,7 +135,8 @@ img {
 
 .btn {
   --gap: 2em;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   background-color: hsl(162deg, 90%, 49%);
   color: hsl(240deg, 6%, 18%);
   font-size: 1.125rem;
@@ -157,9 +153,9 @@ img {
   border: 2px solid transparent;
 }
 .btn .arrow-right {
-  display: inline-block;
-  font-weight: 300;
-  padding-left: 0.3em;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5em;
   transition: padding 0.25s ease-in-out;
 }
 .btn:active, .btn:hover, .btn:focus-visible {
@@ -206,6 +202,16 @@ img {
 }
 .card .card-content {
   padding-bottom: var(--gap);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  justify-content: center;
+  gap: 0 !important;
 }
 
 .title {
@@ -426,6 +432,28 @@ img {
 .contact {
   padding-block: var(--gap);
   background-color: hsl(240deg, 7%, 23%);
+}
+.contact .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+.contact .address-info {
+  margin-top: var(--gap);
+}
+.contact .address-info p {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+}
+.contact .address-info p span {
+  display: inline-block;
+  padding-right: 1em;
+  color: hsl(162deg, 90%, 49%);
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 50rem) {

@@ -19,12 +19,10 @@
       border-radius: 0;
       transition: all 0.3s ease-out;
       border-bottom: 2px solid rgb(152, 152, 152);
-   }
 
-   textarea:focus,
-   input:valid,
-   input:focus-visible {
-      border-bottom-color: $primary;
+      &:where(:focus, :valide) {
+         border-bottom-color: $primary;
+      }
    }
 
    label {
@@ -38,10 +36,7 @@
       transition: all 0.3s ease-out;
    }
 
-   textarea:valid + label,
-   textarea:focus-visible + label,
-   input:valid + label,
-   input:focus-visible + label {
+   :where(textarea:valid, textarea:focus, input:valid, input:focus) + label {
       transform: translateY(0);
       top: -50%;
    }

@@ -1,5 +1,6 @@
 import React, { useId, useState } from "react";
 import Input from "./Input";
+import { BsArrowRight } from "react-icons/bs";
 
 const Form = () => {
    const inputId1 = useId();
@@ -48,7 +49,10 @@ const Form = () => {
             </div>
 
             <button className="btn">
-               Send <span className="arrow-right">&#129125;</span>
+               Send{" "}
+               <span className="arrow-right">
+                  <BsArrowRight size={20} />
+               </span>
             </button>
          </form>
       </>

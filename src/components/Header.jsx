@@ -1,9 +1,16 @@
 import React, { useState } from "react";
-import { AiOutlineDownload } from "react-icons/ai";
+import { HiOutlineDownload } from "react-icons/hi";
 import cv from "../assets/docs/Lebenslauf_Moradi_Meqdad.pdf";
 
 const Header = () => {
    const [activeNav, setactiveNav] = useState(false);
+   const [navItems, setNavItems] = useState([
+      { id: 1, item: "home", target: "index.html" },
+      { id: 2, item: "Works", target: "#works" },
+      { id: 3, item: "About", target: "#about" },
+      { id: 4, item: "Contact", target: "#contact" },
+   ]);
+   const [myIndex, setMyIndex] = useState(0);
 
    // toggle the navigation
    const toggleNav = () => {
@@ -19,18 +26,25 @@ const Header = () => {
 
             <nav className={!activeNav ? "nav" : "nav active"}>
                <ul className="nav-list">
-                  <li>
-                     <a href="index.html">home</a>
-                  </li>
-                  <li>
-                     <a href="#works">works</a>
-                  </li>
-                  <li>
-                     <a href="#about">about</a>
-                  </li>
-                  <li>
-                     <a href="#contact">contact</a>
-                  </li>
+                  {navItems.map((link, i) => {
+                     const { id, item, target } = link;
+
+                     return (
+                        <li key={id}>
+                           <a
+                              onClick={() => {
+                                 setMyIndex(i);
+                                 toggleNav();
+                              }}
+                              className={i === myIndex && "active"}
+                              href={target}
+                           >
+                              {item}
+                           </a>
+                        </li>
+                     );
+                  })}
+
                   <li>
                      {/* download cv */}
                      <a
@@ -38,7 +52,7 @@ const Header = () => {
                         href={cv}
                         download="Meqdad's CV"
                      >
-                        Download CV <AiOutlineDownload size={25} />
+                        Download CV <HiOutlineDownload size={20} />
                      </a>
                   </li>
                </ul>

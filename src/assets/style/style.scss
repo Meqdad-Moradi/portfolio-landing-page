@@ -42,8 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-   font-weight: 600;
-   letter-spacing: 1px;
+   font-weight: 500;
    color: hsl(0, 0%, 100%);
 }
 
@@ -91,14 +90,16 @@ img {
 
 .btn {
    --gap: 2em;
-   display: inline-block;
+   display: flex;
+   align-items: center;
    background-color: $primary;
    color: $dark;
    font-size: 1.125rem;
-   // line-height: 1.2;
+
    text-transform: capitalize;
    padding: 0.5em 1.5em;
    border-radius: 100vmax;
+
    transition: all 0.3s ease-in-out;
    margin-top: var(--gap);
    cursor: pointer;
@@ -106,9 +107,9 @@ img {
    border: 2px solid transparent;
 
    .arrow-right {
-      display: inline-block;
-      font-weight: 300;
-      padding-left: 0.3em;
+      display: flex;
+      align-items: center;
+      padding-left: 0.5em;
       transition: padding 0.25s ease-in-out;
    }
 
@@ -166,6 +167,12 @@ img {
    .card-content {
       padding-bottom: var(--gap);
    }
+}
+
+.content {
+   @include flex(column);
+   justify-content: center;
+   gap: 0 !important;
 }
 
 .title {
