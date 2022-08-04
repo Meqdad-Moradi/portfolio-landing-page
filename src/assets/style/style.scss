@@ -20,7 +20,7 @@
 
 html {
    scroll-behavior: smooth;
-   scroll-padding-top: 120px;
+   scroll-padding-top: 70px;
 }
 
 ::first-letter {
@@ -189,6 +189,7 @@ img {
 @import "works";
 @import "about";
 @import "contact";
+@import "footer";
 
 // set all text alignment to the center on mobile or tablet devices
 @media (max-width: 50em) {

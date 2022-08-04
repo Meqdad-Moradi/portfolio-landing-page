@@ -19,8 +19,8 @@ const Header = () => {
 
    return (
       <header className="header">
-         <div className="container">
-            <div className="logo">
+         <div className="container" aria-label="header-container">
+            <div className="logo" aria-label="header-logo">
                <a href="/">logo</a>
             </div>
 

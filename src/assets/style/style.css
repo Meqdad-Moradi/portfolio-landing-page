@@ -15,7 +15,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px;
+  scroll-padding-top: 70px;
 }
 
 ::first-letter {
@@ -535,6 +535,62 @@ img {
   color: hsl(162deg, 90%, 49%);
   display: flex;
   align-items: center;
+}
+
+.footer {
+  background-color: hsl(240deg, 5%, 11%);
+  padding-block: var(--gap);
+}
+.footer .container {
+  display: grid;
+  grid-template-areas: "logo nav social" "copyright copyright copyright";
+  align-items: center;
+}
+.footer .logo {
+  grid-area: logo;
+}
+.footer .logo a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: hsl(162deg, 90%, 49%);
+}
+.footer .nav {
+  grid-area: nav;
+  display: grid;
+  place-items: center;
+}
+.footer .nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  gap: 2em;
+}
+.footer .nav-list a {
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.footer .nav-list a.active, .footer .nav-list a:hover, .footer .nav-list a:focus-visible {
+  color: hsl(162deg, 90%, 49%);
+}
+.footer .social {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  grid-area: social;
+}
+.footer .social a {
+  display: flex;
+  align-items: center;
+}
+.footer .copyright-tag {
+  grid-area: copyright;
+  font-size: 14px;
+  color: hsl(240deg, 7%, 23%);
+  text-align: center;
 }
 
 @media (max-width: 50em) {
