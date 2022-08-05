@@ -59,7 +59,9 @@ const Footer = () => {
                </a>
             </div>
 
-            <p className="copyright-tag">copyright @copy; 2022. All rights reserved.</p>
+            <p className="copyright-tag">
+               copyright &copy; 2022. All rights reserved.
+            </p>
          </div>
       </footer>
    );
