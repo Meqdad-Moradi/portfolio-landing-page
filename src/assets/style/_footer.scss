@@ -4,6 +4,7 @@
 
    .container {
       display: grid;
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas: "logo nav social" "copyright copyright copyright";
       align-items: center;
    }
@@ -47,10 +48,14 @@
       align-items: center;
       gap: 2em;
       grid-area: social;
+      transition: all 0.3s ease-in-out;
 
       a {
-         display: flex;
-         align-items: center;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            color: $primary;
+         }
       }
    }
 
@@ -59,5 +64,20 @@
       font-size: 14px;
       color: $lighter;
       text-align: center;
+   }
+}
+
+@media (max-width: 50em) {
+   .footer {
+      .container {
+         --gap: 2em;
+         grid-template-columns: 1fr;
+         grid-template-areas: "logo" "nav" "social" "copyright";
+         gap: var(--gap);
+      }
+
+      .social {
+         justify-self: center;
+      }
    }
 }

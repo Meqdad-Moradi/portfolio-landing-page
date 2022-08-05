@@ -1,12 +1,9 @@
 .contact {
-   padding-block: var(--gap);
+   padding-top: var(--gap);
 
    .container {
       @include grid();
    }
-
-   // .contact-info {
-   // }
 
    .address-info {
       margin-top: var(--gap);
