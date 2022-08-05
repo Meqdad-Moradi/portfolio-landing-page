@@ -21,7 +21,7 @@ const Header = () => {
       <header className="header">
          <div className="container" aria-label="header-container">
             <div className="logo" aria-label="header-logo">
-               <a href="/">logo</a>
+               <a href="index.html">logo</a>
             </div>
 
             <nav className={!activeNav ? "nav" : "nav active"}>
