@@ -183,35 +183,11 @@ img {
   color: hsl(240deg, 6%, 18%) !important;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap);
-  box-shadow: 0 0 1em -0.25em hsl(240deg, 5%, 11%);
-  text-align: center;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-}
-.card .img-box img {
-  transition: all 0.4s ease-in-out;
-}
-.card:hover .img-box img {
-  transform: scale(1.1);
-}
-.card .content {
-  padding-bottom: var(--gap);
-}
-
 .content {
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  gap: var(--gap);
-  justify-content: center;
-  gap: 0;
 }
 
 .title {
@@ -422,13 +398,67 @@ img {
 }
 .works .works-card {
   margin-top: var(--gap);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap);
+}
+.works .works-card .card {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+}
+.works .works-card .card:not(:last-of-type) {
+  margin-bottom: 2em;
+}
+.works .works-card .card:where(:hover, :focus) .content {
+  transform: translateY(0);
+}
+.works .works-card .img-box {
+  max-height: 40vh;
+  overflow: hidden;
+}
+.works .works-card .img-box img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.4s ease-in-out;
+}
+.works .works-card .content {
+  position: absolute;
+  inset: auto 0 0 0;
+  transform: translateY(40%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: var(--gap);
+  align-items: start;
+  transition: all 0.5s ease-in-out;
 }
 
+@media (max-width: 50em) {
+  .works .works-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+    align-items: start;
+  }
+  .works .works-card .card {
+    border-radius: var(--border-radius);
+  }
+  .works .works-card .card:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+  .works .works-card .card:where(:hover, :focus) .img-box img {
+    transform: scale(1.1);
+  }
+  .works .works-card .content {
+    --gap: 1.5em;
+    position: initial;
+    inset: initial;
+    transform: translateY(0);
+    background-color: transparent;
+    padding: var(--gap);
+    align-items: center;
+  }
+}
 .about {
   padding-block: var(--gap);
   background-color: hsl(240deg, 7%, 23%);
@@ -511,6 +541,84 @@ img {
        object-fit: cover;
   }
 }
+.testimonials {
+  padding-block: var(--gap);
+  border-bottom: 8px solid hsl(240deg, 5%, 11%);
+}
+.testimonials .slick-list {
+  margin: 0 -1em;
+  padding: 0.5em 0;
+}
+.testimonials .slick-slide > div {
+  padding: 0 1em;
+}
+.testimonials .tistimonials-content {
+  margin-top: calc(var(--gap) - 0.5em);
+  position: relative;
+}
+.testimonials .slider-btn {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: hsl(0deg, 0%, 90%);
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.testimonials .slider-btn.prev {
+  left: -5%;
+}
+.testimonials .slider-btn.next {
+  right: -5%;
+}
+.testimonials .slider-btn:hover {
+  opacity: 1;
+}
+.testimonials .testimonials-card {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  padding: 2em;
+  display: grid !important;
+  grid-template-columns: 10rem auto;
+  gap: 1em;
+  align-items: left;
+  justify-content: space-between;
+  text-align: left;
+  background-color: hsl(240deg, 7%, 23%);
+}
+.testimonials .img-box {
+  background-color: red;
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+  border-radius: 100%;
+}
+.testimonials .img-box img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonials .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+  align-items: start;
+  gap: 1em;
+}
+.testimonials .content p {
+  margin: 0;
+}
+.testimonials .avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: hsl(162deg, 90%, 49%);
+}
+
 .contact {
   padding-top: var(--gap);
 }
