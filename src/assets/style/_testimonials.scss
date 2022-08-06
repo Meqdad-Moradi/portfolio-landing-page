@@ -2,10 +2,6 @@
    padding-block: var(--gap);
    border-bottom: 8px solid $darker;
 
-   .container {
-      //   overflow: hidden;
-   }
-
    .slick-list {
       margin: 0 -1em;
       padding: 0.5em 0;
@@ -47,22 +43,20 @@
       box-shadow: $cardShadow;
       border-radius: var(--border-radius);
       overflow: hidden;
-      padding: 2em;
+
       display: grid !important;
-      grid-template-columns: 10rem auto;
-      gap: 1em;
-      align-items: left;
-      justify-content: space-between;
-      text-align: left;
+      grid-template-columns: repeat(2, auto);
+      grid-template-areas: "img content" "img avatar";
+      justify-content: start;
+      align-items: center;
+      gap: 2em;
       background-color: $lighter;
    }
 
    .img-box {
-      background-color: red;
-      width: 7rem;
-      height: 7rem;
       overflow: hidden;
-      border-radius: 100%;
+      grid-area: img;
+      height: 100%;
 
       img {
          height: 100%;
@@ -71,9 +65,8 @@
    }
 
    .content {
-      @include flex(column);
-      align-items: start;
-      gap: 1em;
+      grid-area: content;
+      padding: 2em 2em 0 0;
 
       p {
          margin: 0;
@@ -85,7 +78,57 @@
       align-items: center;
       gap: 0.5em;
       color: $primary;
+      grid-area: avatar;
+      padding: 0 2em 2em 0;
+
+      p {
+         margin: 0;
+      }
    }
 }
 
+@media (max-width: 50em) {
+   .testimonials {
+      .testimonials-card {
+         grid-template-columns: repeat(2, 1fr);
+         grid-template-areas: "img avatar avatar" "content content content";
+         text-align: left;
+         gap: 1.5em;
+         padding: 2em;
+      }
 
+      .slider-btn {
+         padding: 0 0.5em;
+         top: -0.5em;
+
+         &.next {
+            right: 0.2em;
+            padding-right: 0;
+         }
+
+         &.prev {
+            right: 1em;
+            left: auto;
+         }
+      }
+
+      .img-box {
+         grid-area: img;
+         width: 7em;
+         height: 7em;
+         border-radius: 100%;
+      }
+
+      .content {
+         grid-area: "content";
+         padding: 0;
+      }
+
+      .avatar {
+         flex-direction: column;
+         align-items: start;
+         grid-area: avatar;
+         padding: 0;
+      }
+   }
+}

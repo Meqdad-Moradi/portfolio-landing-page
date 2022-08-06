@@ -78,12 +78,12 @@ const TestimonialsCard = () => {
                            </div>
                            <div className="content">
                               <p className="text">{text}</p>
-                              <div className="avatar">
-                                 <h4 className="avatar-name">{avatarName}</h4>
-                                 <p className="avatar-title">
-                                    {title} of: {company}
-                                 </p>
-                              </div>
+                           </div>
+                           <div className="avatar">
+                              <h4 className="avatar-name">{avatarName}</h4>
+                              <p className="avatar-title">
+                                 {title} of: {company}
+                              </p>
                            </div>
                         </article>
                      );

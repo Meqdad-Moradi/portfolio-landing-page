@@ -9,7 +9,7 @@ export const testimonialsData = [
    {
       id: 1,
       avatarName: "ahmad",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar1,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",
@@ -17,7 +17,7 @@ export const testimonialsData = [
    {
       id: 2,
       avatarName: "mahmod",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar2,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",
@@ -25,7 +25,7 @@ export const testimonialsData = [
    {
       id: 3,
       avatarName: "kalbi",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar3,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",
@@ -33,7 +33,7 @@ export const testimonialsData = [
    {
       id: 4,
       avatarName: "maqsod",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar4,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",
@@ -41,7 +41,7 @@ export const testimonialsData = [
    {
       id: 4,
       avatarName: "jahan gard",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar5,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",
@@ -49,7 +49,7 @@ export const testimonialsData = [
    {
       id: 4,
       avatarName: "maryam jan",
-      title: "ceo",
+      title: "CEO",
       avatarPhoto: avatar6,
       company: "Armanshahr",
       text: "this webiste is very helpfull for those who want to hire this guy.",

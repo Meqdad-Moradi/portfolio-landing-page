@@ -579,21 +579,18 @@ img {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: var(--border-radius);
   overflow: hidden;
-  padding: 2em;
   display: grid !important;
-  grid-template-columns: 10rem auto;
-  gap: 1em;
-  align-items: left;
-  justify-content: space-between;
-  text-align: left;
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: "img content" "img avatar";
+  justify-content: start;
+  align-items: center;
+  gap: 2em;
   background-color: hsl(240deg, 7%, 23%);
 }
 .testimonials .img-box {
-  background-color: red;
-  width: 7rem;
-  height: 7rem;
   overflow: hidden;
-  border-radius: 100%;
+  grid-area: img;
+  height: 100%;
 }
 .testimonials .img-box img {
   height: 100%;
@@ -601,13 +598,8 @@ img {
      object-fit: cover;
 }
 .testimonials .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--gap);
-  align-items: start;
-  gap: 1em;
+  grid-area: content;
+  padding: 2em 2em 0 0;
 }
 .testimonials .content p {
   margin: 0;
@@ -617,8 +609,50 @@ img {
   align-items: center;
   gap: 0.5em;
   color: hsl(162deg, 90%, 49%);
+  grid-area: avatar;
+  padding: 0 2em 2em 0;
+}
+.testimonials .avatar p {
+  margin: 0;
 }
 
+@media (max-width: 50em) {
+  .testimonials .testimonials-card {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "img avatar avatar" "content content content";
+    text-align: left;
+    gap: 1.5em;
+    padding: 2em;
+  }
+  .testimonials .slider-btn {
+    padding: 0 0.5em;
+    top: -0.5em;
+  }
+  .testimonials .slider-btn.next {
+    right: 0.2em;
+    padding-right: 0;
+  }
+  .testimonials .slider-btn.prev {
+    right: 1em;
+    left: auto;
+  }
+  .testimonials .img-box {
+    grid-area: img;
+    width: 7em;
+    height: 7em;
+    border-radius: 100%;
+  }
+  .testimonials .content {
+    grid-area: "content";
+    padding: 0;
+  }
+  .testimonials .avatar {
+    flex-direction: column;
+    align-items: start;
+    grid-area: avatar;
+    padding: 0;
+  }
+}
 .contact {
   padding-top: var(--gap);
 }
