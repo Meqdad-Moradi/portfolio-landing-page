@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio-landing-page/static/css/main.290944d5.css",
-    "main.js": "/portfolio-landing-page/static/js/main.48d28f48.js",
+    "main.css": "/portfolio-landing-page/static/css/main.d2e15042.css",
+    "main.js": "/portfolio-landing-page/static/js/main.b3e52724.js",
     "static/media/Lebenslauf_Moradi_Meqdad.pdf": "/portfolio-landing-page/static/media/Lebenslauf_Moradi_Meqdad.62082e398e71cbea06c0.pdf",
     "static/media/shopping-website.jpg": "/portfolio-landing-page/static/media/shopping-website.8d0035c700f31dc80bbf.jpg",
     "static/media/uni.jpg": "/portfolio-landing-page/static/media/uni.c4d6fef6d1473acdbff6.jpg",
@@ -19,11 +19,11 @@
     "static/media/user06.jpg": "/portfolio-landing-page/static/media/user06.0889598bccc4223ef61f.jpg",
     "static/media/user04.jpg": "/portfolio-landing-page/static/media/user04.aa8766cc003f3f47d54e.jpg",
     "index.html": "/portfolio-landing-page/index.html",
-    "main.290944d5.css.map": "/portfolio-landing-page/static/css/main.290944d5.css.map",
-    "main.48d28f48.js.map": "/portfolio-landing-page/static/js/main.48d28f48.js.map"
+    "main.d2e15042.css.map": "/portfolio-landing-page/static/css/main.d2e15042.css.map",
+    "main.b3e52724.js.map": "/portfolio-landing-page/static/js/main.b3e52724.js.map"
   },
   "entrypoints": [
-    "static/css/main.290944d5.css",
-    "static/js/main.48d28f48.js"
+    "static/css/main.d2e15042.css",
+    "static/js/main.b3e52724.js"
   ]
 }
