@@ -2,6 +2,10 @@
    padding-block: var(--gap);
    border-bottom: 8px solid $darker;
 
+   .container {
+      overflow-x: hidden;
+   }
+
    .slick-list {
       margin: 0 -1em;
       padding: 0.5em 0;
@@ -11,52 +15,67 @@
    }
 
    .tistimonials-content {
-      margin-top: calc(var(--gap) - 0.5em);
       position: relative;
-   }
-
-   .slider-btn {
-      cursor: pointer;
-      font-size: 2.5rem;
-      color: $white;
-      opacity: 0.5;
-
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all 0.3s ease-in-out;
-
-      &.prev {
-         left: -5%;
-      }
-
-      &.next {
-         right: -5%;
-      }
-
-      &:hover {
-         opacity: 1;
-      }
+      min-height: 25vh;
+      display: flex;
    }
 
    .testimonials-card {
-      box-shadow: $cardShadow;
       border-radius: var(--border-radius);
       overflow: hidden;
 
-      display: grid !important;
+      display: grid;
       grid-template-columns: repeat(2, auto);
       grid-template-areas: "img content" "img avatar";
       justify-content: start;
       align-items: center;
       gap: 2em;
       background-color: $lighter;
+
+      // positioning the slides
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      opacity: 0;
+      transition: all 0.5s ease;
+
+      &.active {
+         opacity: 1;
+         transform: translateX(0);
+      }
+      &.left {
+         transform: translateX(-100%);
+      }
+      &.right {
+         transform: translateX(100%);
+      }
+   }
+
+   .slider-btns-container {
+      margin-block: 1.5em;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+   }
+
+   .slider-btn {
+      cursor: pointer;
+      font-size: 2rem;
+      color: $white;
+      opacity: 0.5;
+      padding: 0.2em 0.5em;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+         opacity: 1;
+      }
    }
 
    .img-box {
       overflow: hidden;
       grid-area: img;
-      height: 100%;
+      max-height: 100%;
+      min-width: 4em;
 
       img {
          height: 100%;
@@ -89,27 +108,16 @@
 
 @media (max-width: 50em) {
    .testimonials {
+      .tistimonials-content {
+         height: 50vh;
+      }
+
       .testimonials-card {
          grid-template-columns: repeat(2, 1fr);
          grid-template-areas: "img avatar avatar" "content content content";
          text-align: left;
          gap: 1.5em;
          padding: 2em;
-      }
-
-      .slider-btn {
-         padding: 0 0.5em;
-         top: -0.5em;
-
-         &.next {
-            right: 0.2em;
-            padding-right: 0;
-         }
-
-         &.prev {
-            right: 1em;
-            left: auto;
-         }
       }
 
       .img-box {

@@ -4,91 +4,98 @@ import { testimonialsData } from "./testimonialsData";
 
 const TestimonialsCard = () => {
    const [users, setUsers] = useState(null);
-   const sliderBtns = useRef();
+   const [index, setIndex] = useState(0);
 
-   //    console.log(sliderBtns);
-
+   // get data from server for example
    useEffect(() => {
       setUsers(testimonialsData);
-   }, []);
+   }, [users]);
 
-   let settings = {
-      dots: false,
-      arrows: false,
-      infinite: false,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      initialSlide: 0,
-      responsive: [
-         {
-            breakpoint: 1024,
-            settings: {
-               slidesToShow: 2,
-               slidesToScroll: 1,
-               infinite: true,
-               dots: true,
-            },
-         },
-         {
-            breakpoint: 830,
-            settings: {
-               slidesToShow: 1,
-               slidesToScroll: 1,
-               initialSlide: 0,
-            },
-         },
-      ],
-   };
+   // check if the slide run out of the box
+   useEffect(() => {
+      const lastIndex = users?.length - 1;
+      if (index > lastIndex) {
+         setIndex(0);
+      }
+      if (index < 0) {
+         setIndex(lastIndex);
+      }
+   }, [index, users]);
+
+   // autoslide
+   useEffect(() => {
+      const autoSlide = setInterval(() => {
+         setIndex((prev) => prev + 1);
+      }, 5000);
+
+      return () => clearInterval(autoSlide);
+   }, [index]);
 
    return (
       <section className="testimonials">
          <div className="container">
-            <h1 className="title">What does the people das about us :)</h1>
+            <h1 className="title">Reviews</h1>
+            <p>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Id illum
+               temporibus ratione, sequi at molestias.
+            </p>
 
-            <div className="tistimonials-content">
+            <div className="slider-btns-container">
                <button
                   className="slider-btn prev"
-                  onClick={() => sliderBtns.current.slickPrev()}
+                  onClick={() => setIndex((prev) => prev - 1)}
                >
                   <span>&#10094;</span>
                </button>
                <button
                   className="slider-btn next"
-                  onClick={() => sliderBtns.current.slickNext()}
+                  onClick={() => setIndex((prev) => prev + 1)}
                >
                   <span>&#10095;</span>
                </button>
+            </div>
 
-               <Slider {...settings} ref={sliderBtns}>
-                  {users?.map((user, i) => {
-                     const {
-                        id,
-                        avatarName,
-                        avatarPhoto,
-                        title,
-                        text,
-                        company,
-                     } = user;
+            <div className="tistimonials-content">
+               {users?.map((user, i) => {
+                  const { id, avatarName, avatarPhoto, title, text, company } =
+                     user;
 
-                     return (
-                        <article className="testimonials-card" key={id}>
-                           <div className="img-box">
-                              <img src={avatarPhoto} alt="user's_picture" />
-                           </div>
-                           <div className="content">
-                              <p className="text">{text}</p>
-                           </div>
-                           <div className="avatar">
-                              <h4 className="avatar-name">{avatarName}</h4>
-                              <p className="avatar-title">
-                                 {title} of: {company}
-                              </p>
-                           </div>
-                        </article>
-                     );
-                  })}
-               </Slider>
+                  // index === i
+                  //    ? "testimonials-card active"
+                  //    : i < index
+                  //    ? "testimonials-card left"
+                  //    : "testimonials-card right"
+
+                  let position = "testimonials-card right";
+
+                  if (i === index) {
+                     position = "testimonials-card active";
+                  }
+
+                  if (
+                     i === index - 1 ||
+                     (index === 0 && i === users?.length - 1)
+                  ) {
+                     position = "testimonials-card left";
+                  }
+
+                  return (
+                     <article className={position} key={id}>
+                        <div className="img-box">
+                           <img src={avatarPhoto} alt="user's_picture" />
+                        </div>
+                        <div className="content">
+                           <p className="text">{text}</p>
+                        </div>
+                        <div className="avatar">
+                           <h4 className="avatar-name">{avatarName}</h4>
+                           <p className="avatar-title">
+                              {title} of: {company}
+                           </p>
+                        </div>
+                     </article>
+                  );
+               })}
             </div>
          </div>
       </section>

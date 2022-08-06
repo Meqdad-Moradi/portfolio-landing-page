@@ -1,0 +1,65 @@
+.sliderSection {
+   padding-block: 3em;
+   background-color: rgb(24, 22, 22);
+}
+
+.container {
+   overflow-x: hidden;
+   max-width: 1110px;
+   margin-inline: auto;
+}
+
+.sliderContainer {
+   position: relative;
+   min-height: 30vh;
+}
+
+.box {
+   min-width: 100%;
+   max-width: 100%;
+   background-color: blue;
+   padding: 2em;
+   display: grid;
+   place-content: center;
+   transform: translate(100%);
+   position: absolute;
+   inset: 0 auto auto 0;
+   transition: transform 0.5s ease;
+}
+
+.box.right {
+   transform: translateX(100%);
+}
+
+.box.left {
+   transform: translateX(-100%);
+}
+
+.box.active {
+   transform: translateX(0);
+}
+
+.box .title {
+   text-transform: capitalize;
+   font-size: 3rem;
+}
+
+.sliderBtnContainer {
+   display: flex;
+   justify-content: end;
+   gap: 0.5em;
+   margin-bottom: 1em;
+}
+
+.sliderBtnContainer .sliderBtn {
+   color: white;
+   text-transform: capitalize;
+   font-size: 1.125rem;
+   cursor: pointer;
+   background-color: rgb(75, 75, 75);
+   padding: 0.5em 1em;
+   border-radius: 5px;
+}
+.sliderBtnContainer .sliderBtn:where( :active) {
+   background-color: rgb(37, 37, 37);
+}

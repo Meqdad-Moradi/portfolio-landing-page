@@ -12,7 +12,7 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar1,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
    {
       id: 2,
@@ -20,7 +20,7 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar2,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
    {
       id: 3,
@@ -28,7 +28,7 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar3,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
    {
       id: 4,
@@ -36,7 +36,7 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar4,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
    {
       id: 4,
@@ -44,7 +44,7 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar5,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
    {
       id: 4,
@@ -52,6 +52,6 @@ export const testimonialsData = [
       title: "CEO",
       avatarPhoto: avatar6,
       company: "Armanshahr",
-      text: "this webiste is very helpfull for those who want to hire this guy.",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis sapiente quasi corrupti ad consequatur earum sit corporis, temporibus accusantium provident repudiandae quibusdam quis eos a. Quam eos minus architecto autem.",
    },
 ];

@@ -412,7 +412,7 @@ img {
   transform: translateY(0);
 }
 .works .works-card .img-box {
-  max-height: 40vh;
+  max-height: 70vh;
   overflow: hidden;
 }
 .works .works-card .img-box img {
@@ -545,6 +545,9 @@ img {
   padding-block: var(--gap);
   border-bottom: 8px solid hsl(240deg, 5%, 11%);
 }
+.testimonials .container {
+  overflow-x: hidden;
+}
 .testimonials .slick-list {
   margin: 0 -1em;
   padding: 0.5em 0;
@@ -553,44 +556,58 @@ img {
   padding: 0 1em;
 }
 .testimonials .tistimonials-content {
-  margin-top: calc(var(--gap) - 0.5em);
   position: relative;
-}
-.testimonials .slider-btn {
-  cursor: pointer;
-  font-size: 2.5rem;
-  color: hsl(0deg, 0%, 90%);
-  opacity: 0.5;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: all 0.3s ease-in-out;
-}
-.testimonials .slider-btn.prev {
-  left: -5%;
-}
-.testimonials .slider-btn.next {
-  right: -5%;
-}
-.testimonials .slider-btn:hover {
-  opacity: 1;
+  min-height: 25vh;
+  display: flex;
 }
 .testimonials .testimonials-card {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
   border-radius: var(--border-radius);
   overflow: hidden;
-  display: grid !important;
+  display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-areas: "img content" "img avatar";
   justify-content: start;
   align-items: center;
   gap: 2em;
   background-color: hsl(240deg, 7%, 23%);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.testimonials .testimonials-card.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.testimonials .testimonials-card.left {
+  transform: translateX(-100%);
+}
+.testimonials .testimonials-card.right {
+  transform: translateX(100%);
+}
+.testimonials .slider-btns-container {
+  margin-block: 1.5em;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.testimonials .slider-btn {
+  cursor: pointer;
+  font-size: 2rem;
+  color: hsl(0deg, 0%, 90%);
+  opacity: 0.5;
+  padding: 0.2em 0.5em;
+  transition: all 0.3s ease-in-out;
+}
+.testimonials .slider-btn:hover {
+  opacity: 1;
 }
 .testimonials .img-box {
   overflow: hidden;
   grid-area: img;
-  height: 100%;
+  max-height: 100%;
+  min-width: 4em;
 }
 .testimonials .img-box img {
   height: 100%;
@@ -617,24 +634,15 @@ img {
 }
 
 @media (max-width: 50em) {
+  .testimonials .tistimonials-content {
+    height: 50vh;
+  }
   .testimonials .testimonials-card {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "img avatar avatar" "content content content";
     text-align: left;
     gap: 1.5em;
     padding: 2em;
-  }
-  .testimonials .slider-btn {
-    padding: 0 0.5em;
-    top: -0.5em;
-  }
-  .testimonials .slider-btn.next {
-    right: 0.2em;
-    padding-right: 0;
-  }
-  .testimonials .slider-btn.prev {
-    right: 1em;
-    left: auto;
   }
   .testimonials .img-box {
     grid-area: img;
