@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
+import React, { useEffect, useState } from "react";
+import { FaQuoteRight } from "react-icons/fa";
 import { testimonialsData } from "./testimonialsData";
 
 const TestimonialsCard = () => {
@@ -60,12 +60,6 @@ const TestimonialsCard = () => {
                   const { id, avatarName, avatarPhoto, title, text, company } =
                      user;
 
-                  // index === i
-                  //    ? "testimonials-card active"
-                  //    : i < index
-                  //    ? "testimonials-card left"
-                  //    : "testimonials-card right"
-
                   let position = "testimonials-card right";
 
                   if (i === index) {
@@ -92,6 +86,9 @@ const TestimonialsCard = () => {
                            <p className="avatar-title">
                               {title} of: {company}
                            </p>
+                        </div>
+                        <div className="qute">
+                           <FaQuoteRight />
                         </div>
                      </article>
                   );

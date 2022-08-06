@@ -632,6 +632,13 @@ img {
 .testimonials .avatar p {
   margin: 0;
 }
+.testimonials .qute {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  font-size: 5em;
+  opacity: 0.1;
+}
 
 @media (max-width: 50em) {
   .testimonials .tistimonials-content {
@@ -659,6 +666,9 @@ img {
     align-items: start;
     grid-area: avatar;
     padding: 0;
+  }
+  .testimonials .qute {
+    bottom: -6%;
   }
 }
 .contact {

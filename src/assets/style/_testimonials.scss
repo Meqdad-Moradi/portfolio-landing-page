@@ -104,6 +104,14 @@
          margin: 0;
       }
    }
+
+   .qute {
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      font-size: 5em;
+      opacity: 0.1;
+   }
 }
 
 @media (max-width: 50em) {
@@ -137,6 +145,10 @@
          align-items: start;
          grid-area: avatar;
          padding: 0;
+      }
+
+      .qute {
+         bottom: -6%;
       }
    }
 }
